@@ -200,15 +200,17 @@ local function SLEXDXZ_fake_script() -- get_coins.LocalScript
 	local script = Instance.new('LocalScript', get_coins)
 
 	script.Parent.MouseButton1Click:connect(function()
-		while true do
-    			game.Players.LocalPlayer.Character.Humanoid.Jump = true
-    			for _,v in pairs(workspace.Gold:GetChildren()) do
-				position = v.Position
-				game.Players.LocalPlayer.Character:moveTo(position)
-				wait(0.1)
-			end
-    		wait(32)
-		end
+	while true do
+    		position_before = game.Players.LocalPlayer.Character.Head.Position
+    		game.Players.LocalPlayer.Character.Humanoid.Jump = true
+    		for _,v in pairs(workspace.Gold:GetChildren()) do
+			position = v.Position
+	    		game.Players.LocalPlayer.Character:moveTo(position)
+			wait(0.1)
+    		end
+    		game.Players.LocalPlayer.Character:moveTo(position_before)
+    	wait(32)
+	end
 	end)
 end
 coroutine.wrap(SLEXDXZ_fake_script)()
