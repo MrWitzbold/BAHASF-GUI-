@@ -14,6 +14,8 @@ local t_to_tele_to_random = Instance.new("TextButton")
 local message = Instance.new("TextLabel")
 local discord = Instance.new("TextLabel")
 local disable_deadly = Instance.new("TextButton")
+local open_close_frame = Instance.new("Frame")
+local open_close_button = Instance.new("TextButton")
 
 --Properties:
 
@@ -194,27 +196,45 @@ disable_deadly.Text = "Disable deadly objects"
 disable_deadly.TextColor3 = Color3.fromRGB(255, 255, 255)
 disable_deadly.TextSize = 25.000
 
+open_close_frame.Name = "open_close_frame"
+open_close_frame.Parent = ScreenGui
+open_close_frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+open_close_frame.BackgroundTransparency = 1.000
+open_close_frame.Size = UDim2.new(0, 100, 0, 100)
+
+open_close_button.Name = "open_close_button"
+open_close_button.Parent = open_close_frame
+open_close_button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+open_close_button.BackgroundTransparency = 0.600
+open_close_button.BorderSizePixel = 3
+open_close_button.Position = UDim2.new(5.72641611, 0, 0.534654379, 0)
+open_close_button.Size = UDim2.new(0, 57, 0, 23)
+open_close_button.Font = Enum.Font.SourceSans
+open_close_button.Text = "Hide"
+open_close_button.TextColor3 = Color3.fromRGB(255, 255, 255)
+open_close_button.TextSize = 25.000
+
 -- Scripts:
 
-local function SLEXDXZ_fake_script() -- get_coins.LocalScript 
+local function ZTYPXWQ_fake_script() -- get_coins.LocalScript 
 	local script = Instance.new('LocalScript', get_coins)
 
 	script.Parent.MouseButton1Click:connect(function()
-	while true do
-    		position_before = game.Players.LocalPlayer.Character.Head.Position
-    		game.Players.LocalPlayer.Character.Humanoid.Jump = true
-    		for _,v in pairs(workspace.Gold:GetChildren()) do
-			position = v.Position
-	    		game.Players.LocalPlayer.Character:moveTo(position)
-			wait(0.1)
-    		end
-    		game.Players.LocalPlayer.Character:moveTo(position_before)
-    	wait(32)
-	end
+		while true do
+			local position_before = game.Players.LocalPlayer.Character.Head.Position
+			game.Players.LocalPlayer.Character.Humanoid.Jump = true
+			for _,v in pairs(workspace.Gold:GetChildren()) do
+				local position = v.Position
+				game.Players.LocalPlayer.Character:moveTo(position)
+				wait(0.1)
+			end
+			game.Players.LocalPlayer.Character:moveTo(position_before)
+			wait(32)
+		end
 	end)
 end
-coroutine.wrap(SLEXDXZ_fake_script)()
-local function VLXVFF_fake_script() -- noclip.LocalScript 
+coroutine.wrap(ZTYPXWQ_fake_script)()
+local function IFRW_fake_script() -- noclip.LocalScript 
 	local script = Instance.new('LocalScript', noclip)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -237,8 +257,8 @@ local function VLXVFF_fake_script() -- noclip.LocalScript
 		print('Press "R" to noclip')
 	end)
 end
-coroutine.wrap(VLXVFF_fake_script)()
-local function JBSFMYK_fake_script() -- troll.LocalScript 
+coroutine.wrap(IFRW_fake_script)()
+local function FNJLNFF_fake_script() -- troll.LocalScript 
 	local script = Instance.new('LocalScript', troll)
 
 	script.Parent.MouseButton1Click:Connect(function()	
@@ -249,8 +269,8 @@ local function JBSFMYK_fake_script() -- troll.LocalScript
 		end
 	end)
 end
-coroutine.wrap(JBSFMYK_fake_script)()
-local function PCNMY_fake_script() -- troll2.LocalScript 
+coroutine.wrap(FNJLNFF_fake_script)()
+local function JBYHPN_fake_script() -- troll2.LocalScript 
 	local script = Instance.new('LocalScript', troll2)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -372,8 +392,8 @@ local function PCNMY_fake_script() -- troll2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(PCNMY_fake_script)()
-local function AZSKMTZ_fake_script() -- btools.LocalScript 
+coroutine.wrap(JBYHPN_fake_script)()
+local function HDYH_fake_script() -- btools.LocalScript 
 	local script = Instance.new('LocalScript', btools)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -431,8 +451,8 @@ local function AZSKMTZ_fake_script() -- btools.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(AZSKMTZ_fake_script)()
-local function VILKVX_fake_script() -- tele_to_player.LocalScript 
+coroutine.wrap(HDYH_fake_script)()
+local function NIEU_fake_script() -- tele_to_player.LocalScript 
 	local script = Instance.new('LocalScript', tele_to_player)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -445,8 +465,8 @@ local function VILKVX_fake_script() -- tele_to_player.LocalScript
 		game.Players.LocalPlayer.Character:moveTo(player.Character.Head.Position)
 	end)
 end
-coroutine.wrap(VILKVX_fake_script)()
-local function JIPSO_fake_script() -- t_to_tele_to_random.LocalScript 
+coroutine.wrap(NIEU_fake_script)()
+local function RHMS_fake_script() -- t_to_tele_to_random.LocalScript 
 	local script = Instance.new('LocalScript', t_to_tele_to_random)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -461,8 +481,8 @@ local function JIPSO_fake_script() -- t_to_tele_to_random.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(JIPSO_fake_script)()
-local function NGJBCTA_fake_script() -- disable_deadly.LocalScript 
+coroutine.wrap(RHMS_fake_script)()
+local function XSLF_fake_script() -- disable_deadly.LocalScript 
 	local script = Instance.new('LocalScript', disable_deadly)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -483,4 +503,18 @@ local function NGJBCTA_fake_script() -- disable_deadly.LocalScript
 		end
 	end)
 end
-coroutine.wrap(NGJBCTA_fake_script)()
+coroutine.wrap(XSLF_fake_script)()
+local function KGPJP_fake_script() -- open_close_button.LocalScript 
+	local script = Instance.new('LocalScript', open_close_button)
+
+	script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.main.Visible == true then
+			script.Parent.Parent.Parent.main.Visible = false
+			script.Parent.Text = "Show"
+		else
+			script.Parent.Parent.Parent.main.Visible = true
+			script.Parent.Text = "Hide"
+		end
+	end)
+end
+coroutine.wrap(KGPJP_fake_script)()
